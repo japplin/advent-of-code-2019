@@ -14,7 +14,7 @@ class PartTwo(private val input: Array<Int> = DAY_ONE_INPUT) {
 
 private fun Int.fuelRequired() = (this / 3) - 2
 
-private fun recursiveFuelRequired(mass: Int):Int {
+private fun recursiveFuelRequired(mass: Int): Int {
     val fuelMass = mass.fuelRequired()
     return if (fuelMass.fuelRequired() > 0) fuelMass + recursiveFuelRequired(fuelMass) else fuelMass
 }
